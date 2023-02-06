@@ -5,7 +5,10 @@ import 'package:tiktok_clone/constants/sizes.dart';
 class PostVideoButton extends StatelessWidget {
   const PostVideoButton({
     Key? key,
+    required this.selectedIndex,
   }) : super(key: key);
+
+  final int selectedIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -39,12 +42,13 @@ class PostVideoButton extends StatelessWidget {
           width: 40,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6),
-            color: Colors.white,
+            color: selectedIndex == 0 ? Colors.white : Colors.black,
           ),
-          child: const Center(
+          child: Center(
             child: FaIcon(
               FontAwesomeIcons.plus,
               size: Sizes.size16,
+              color: selectedIndex == 0 ? Colors.black : Colors.white,
             ),
           ),
         )
